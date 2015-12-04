@@ -1,0 +1,13 @@
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\bin\Debug\TMKJ.FenLiu.Common.dll
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\bin\Debug\TMKJ.FenLiu.Common.pdb
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\bin\Debug\Newtonsoft.Json.dll
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\bin\Debug\Newtonsoft.Json.xml
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\obj\Debug\TMKJ.FenLiu.Common.csprojResolveAssemblyReference.cache
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\obj\Debug\TMKJ.FenLiu.Common.dll
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\obj\Debug\TMKJ.FenLiu.Common.pdb
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Common\bin\Debug\TMKJ.FenLiu.Common.dll
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Common\bin\Debug\TMKJ.FenLiu.Common.pdb
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Common\bin\Debug\Newtonsoft.Json.dll
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Common\obj\Debug\TMKJ.FenLiu.Common.csprojResolveAssemblyReference.cache
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Common\obj\Debug\TMKJ.FenLiu.Common.dll
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Common\obj\Debug\TMKJ.FenLiu.Common.pdb

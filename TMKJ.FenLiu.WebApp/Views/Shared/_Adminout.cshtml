@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>首页</title>
+    <link href="~/Content/layout.css" rel="stylesheet" />
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/easyui.css" rel="stylesheet" />
+    <link href="~/Content/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    @RenderSection("style", false)
+</head>
+<body>
+    <div class="header clearfix">
+        <div class="logo_box"><a href="javascript:;"><em class="logo_img"></em></a></div>
+        <div class="head_right">您好：<em class="logined_name">@RenderSection("name", true)</em><em>@Html.ActionLink("退出", "LoginOut")</em></div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <div class="fot_box">
+        <div class="fot_con">
+            <p class="comp_line"><a href="javascript:;">北京信息科技大学</a>版权所有</p>
+            <p class="comp_p_line">
+                <span class="comp_span"><a href="javascript:;">北京同美世纪科技有限公司</a>技术支持</span>
+                <span class="use_fot_a">
+                    <a href="javascript:;">帮助中心</a>
+                    <em>|</em>
+                    <a href="javascript:;">诚招代理</a>
+                    <em>|</em>
+                    <a href="javascript:;">联系我们</a>
+                </span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

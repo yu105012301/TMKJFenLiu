@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShuntModelStoreContainer" CdmEntityContainer="ShuntContext">
+    <EntitySetMapping Name="TbAnswer">
+      <EntityTypeMapping TypeName="ShuntModel.TbAnswer">
+        <MappingFragment StoreEntitySet="TbAnswer">
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="AnswerContent" ColumnName="AnswerContent" />
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="AnswerIndex" ColumnName="AnswerIndex" />
+          <ScalarProperty Name="IsRightAnswer" ColumnName="IsRightAnswer" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbApplyMajor">
+      <EntityTypeMapping TypeName="ShuntModel.TbApplyMajor">
+        <MappingFragment StoreEntitySet="TbApplyMajor">
+          <ScalarProperty Name="ApplyMajorId" ColumnName="ApplyMajorId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="MajorId" ColumnName="MajorId" />
+          <ScalarProperty Name="ToApplyMajorId" ColumnName="ToApplyMajorId" />
+          <ScalarProperty Name="ApplyReason" ColumnName="ApplyReason" />
+          <ScalarProperty Name="IsDone" ColumnName="IsDone" />
+          <ScalarProperty Name="DealUserId" ColumnName="DealUserId" />
+          <ScalarProperty Name="DealTime" ColumnName="DealTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbClass">
+      <EntityTypeMapping TypeName="ShuntModel.TbClass">
+        <MappingFragment StoreEntitySet="TbClass">
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="MajorId" ColumnName="MajorId" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="ClassCount" ColumnName="ClassCount" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbDesire">
+      <EntityTypeMapping TypeName="ShuntModel.TbDesire">
+        <MappingFragment StoreEntitySet="TbDesire">
+          <ScalarProperty Name="DesireId" ColumnName="DesireId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="FirMajorId" ColumnName="FirMajorId" />
+          <ScalarProperty Name="SecMajorId" ColumnName="SecMajorId" />
+          <ScalarProperty Name="ThiMajorId" ColumnName="ThiMajorId" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbDissertation">
+      <EntityTypeMapping TypeName="ShuntModel.TbDissertation">
+        <MappingFragment StoreEntitySet="TbDissertation">
+          <ScalarProperty Name="DissertationId" ColumnName="DissertationId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="MajorId" ColumnName="MajorId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbInterviewScore">
+      <EntityTypeMapping TypeName="ShuntModel.TbInterviewScore">
+        <MappingFragment StoreEntitySet="TbInterviewScore">
+          <ScalarProperty Name="InterviewScoreId" ColumnName="InterviewScoreId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="InterviewScore" ColumnName="InterviewScore" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbLession">
+      <EntityTypeMapping TypeName="ShuntModel.TbLession">
+        <MappingFragment StoreEntitySet="TbLession">
+          <ScalarProperty Name="LessionId" ColumnName="LessionId" />
+          <ScalarProperty Name="LessionName" ColumnName="LessionName" />
+          <ScalarProperty Name="LessionType" ColumnName="LessionType" />
+          <ScalarProperty Name="MajorId" ColumnName="MajorId" />
+          <ScalarProperty Name="LessionTime" ColumnName="LessionTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbLessionScore">
+      <EntityTypeMapping TypeName="ShuntModel.TbLessionScore">
+        <MappingFragment StoreEntitySet="TbLessionScore">
+          <ScalarProperty Name="LessionScoreId" ColumnName="LessionScoreId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="LessionId" ColumnName="LessionId" />
+          <ScalarProperty Name="LessionScore" ColumnName="LessionScore" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbMajor">
+      <EntityTypeMapping TypeName="ShuntModel.TbMajor">
+        <MappingFragment StoreEntitySet="TbMajor">
+          <ScalarProperty Name="MajorId" ColumnName="MajorId" />
+          <ScalarProperty Name="MajorNumber" ColumnName="MajorNumber" />
+          <ScalarProperty Name="MajorName" ColumnName="MajorName" />
+          <ScalarProperty Name="MajorMark" ColumnName="MajorMark" />
+          <ScalarProperty Name="MajorCount" ColumnName="MajorCount" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbQuesScore">
+      <EntityTypeMapping TypeName="ShuntModel.TbQuesScore">
+        <MappingFragment StoreEntitySet="TbQuesScore">
+          <ScalarProperty Name="QuesScoreId" ColumnName="QuesScoreId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="QuesType" ColumnName="QuesType" />
+          <ScalarProperty Name="QuesScore" ColumnName="QuesScore" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbQuestion">
+      <EntityTypeMapping TypeName="ShuntModel.TbQuestion">
+        <MappingFragment StoreEntitySet="TbQuestion">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="MajorId" ColumnName="MajorId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="UsersId" ColumnName="UsersId" />
+          <ScalarProperty Name="QuestionTime" ColumnName="QuestionTime" />
+          <ScalarProperty Name="AnswerTime" ColumnName="AnswerTime" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+          <ScalarProperty Name="Delflag" ColumnName="Delflag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbRecord">
+      <EntityTypeMapping TypeName="ShuntModel.TbRecord">
+        <MappingFragment StoreEntitySet="TbRecord">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="BeforeMajorId" ColumnName="BeforeMajorId" />
+          <ScalarProperty Name="BeforeClassId" ColumnName="BeforeClassId" />
+          <ScalarProperty Name="AfterMajorId" ColumnName="AfterMajorId" />
+          <ScalarProperty Name="AfterClassId" ColumnName="AfterClassId" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbShunt">
+      <EntityTypeMapping TypeName="ShuntModel.TbShunt">
+        <MappingFragment StoreEntitySet="TbShunt">
+          <ScalarProperty Name="OpenCloseId" ColumnName="OpenCloseId" />
+          <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+          <ScalarProperty Name="CloseTime" ColumnName="CloseTime" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+          <ScalarProperty Name="ShuntName" ColumnName="ShuntName" />
+          <ScalarProperty Name="OpenShunt" ColumnName="OpenShunt" />
+          <ScalarProperty Name="CloseShunt" ColumnName="CloseShunt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbStudent">
+      <EntityTypeMapping TypeName="ShuntModel.TbStudent">
+        <MappingFragment StoreEntitySet="TbStudent">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+          <ScalarProperty Name="StudentPwd" ColumnName="StudentPwd" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="SysRole" ColumnName="SysRole" />
+          <ScalarProperty Name="MajorId" ColumnName="MajorId" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbStudentClass">
+      <EntityTypeMapping TypeName="ShuntModel.TbStudentClass">
+        <MappingFragment StoreEntitySet="TbStudentClass">
+          <ScalarProperty Name="StudentClassId" ColumnName="StudentClassId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbTaskRecord">
+      <EntityTypeMapping TypeName="ShuntModel.TbTaskRecord">
+        <MappingFragment StoreEntitySet="TbTaskRecord">
+          <ScalarProperty Name="TaskRecordId" ColumnName="TaskRecordId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="TaskIndex" ColumnName="TaskIndex" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbTaskRecordDetail">
+      <EntityTypeMapping TypeName="ShuntModel.TbTaskRecordDetail">
+        <MappingFragment StoreEntitySet="TbTaskRecordDetail">
+          <ScalarProperty Name="TaskRecordDetailId" ColumnName="TaskRecordDetailId" />
+          <ScalarProperty Name="TaskRecordId" ColumnName="TaskRecordId" />
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="TaskRecordIndex" ColumnName="TaskRecordIndex" />
+          <ScalarProperty Name="AnswerContent" ColumnName="AnswerContent" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbTopic">
+      <EntityTypeMapping TypeName="ShuntModel.TbTopic">
+        <MappingFragment StoreEntitySet="TbTopic">
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="TopicContent" ColumnName="TopicContent" />
+          <ScalarProperty Name="TopicType" ColumnName="TopicType" />
+          <ScalarProperty Name="MajorId" ColumnName="MajorId" />
+          <ScalarProperty Name="TopicIndex" ColumnName="TopicIndex" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbTotalScore">
+      <EntityTypeMapping TypeName="ShuntModel.TbTotalScore">
+        <MappingFragment StoreEntitySet="TbTotalScore">
+          <ScalarProperty Name="TotalScoreId" ColumnName="TotalScoreId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="InterviewScore" ColumnName="InterviewScore" />
+          <ScalarProperty Name="MajorScore" ColumnName="MajorScore" />
+          <ScalarProperty Name="QuestionnaireScore" ColumnName="QuestionnaireScore" />
+          <ScalarProperty Name="DissertationScore" ColumnName="DissertationScore" />
+          <ScalarProperty Name="TotalScore" ColumnName="TotalScore" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbUsers">
+      <EntityTypeMapping TypeName="ShuntModel.TbUsers">
+        <MappingFragment StoreEntitySet="TbUsers">
+          <ScalarProperty Name="UsersId" ColumnName="UsersId" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="SysRole" ColumnName="SysRole" />
+          <ScalarProperty Name="MajorId" ColumnName="MajorId" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

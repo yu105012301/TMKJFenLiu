@@ -1,0 +1,249 @@
+﻿@model TMKJ.FenLiu.Model.TbMajor
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Adminout.cshtml";
+}
+@section name{
+    @ViewBag.UserInfo.UserName
+}
+@section style{
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/datapattern.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            loadData();
+        });
+
+        function loadData() {
+            $('#tt').datagrid({
+                url: '/TbMajor/TbMajorList',
+                title: '专业列表',
+                width: 1000,
+                height: 400,
+                fitColumns: true, //列自适应
+                nowrap: false,
+                idField: 'MajorId',//主键列的列明
+                loadMsg: '正在加载专业的信息...',
+                pagination: true,//是否有分页
+                singleSelect: false,//是否单行选择
+                pageSize: 10,//页大小，一页多少条数据
+                pageNumber: 1,//当前页，默认的
+                pageList: [2, 5, 10],
+                queryParams: {},//往后台传递参数
+                columns: [[
+                    { field: 'ck', checkbox: true, align: 'left', width: 50 },
+					{ field: 'MajorNumber', title: '专业编号', width: 70 },
+                     { field: 'MajorName', title: '专业名称', width: 70 },
+                     {
+                         field: 'MajorCount', title: '专业人数', width: 50
+                     },
+                     {
+                         field: 'DelFlag', title: '是否启用', width: 50,
+                         formatter: function (value, row, index) {
+                             switch (value) {
+                                 case 0:
+                                     return "启用";
+                                     break;
+                                 case 1:
+                                     return "禁用";
+                                     break;
+                             }
+                         }
+                     },
+                    {
+                        field: 'CreateTime', title: '创建时间', width: 80, align: 'right',
+                        formatter: function (value, row, index) {
+                            return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
+                        }
+                    },
+                    {
+                        field: 'ModifyTime', title: '修改时间', width: 80, align: 'right',
+                        formatter: function (value, row, index) {
+                            return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
+                        }
+                    }
+                ]],
+                toolbar: [{
+                    id: 'btnDelete',
+                    text: '删除',
+                    iconCls: 'icon-remove',
+                    handler: function () {
+                        deleteInfo();
+                    }
+                }, {
+                    id: 'btnAdd',
+                    text: '添加',
+                    iconCls: 'icon-add',
+                    handler: function () {
+                        addInfo();
+                    }
+                }, {
+                    id: 'btnEdit',
+                    text: '编辑',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        editInfo();
+                    }
+                }],
+            });
+        }
+        //编辑
+        function editInfo() {
+            var rows = $('#tt').datagrid('getSelections');
+            if (rows.length != 1) {
+                $.messager.alert("提示", "错误", "error");
+                return;
+            }
+            $("#editDiv").css("display", "block");
+            //给表单添加修改的数据.
+            $("#txtId").val(rows[0].MajorId);
+            $("#txtNum").val(rows[0].MajorNumber);
+            $("#txtName").val(rows[0].MajorName);
+            $("#txtCount").val(rows[0].MajorCount);
+            $("#txtMark").val(rows[0].MajorMark);
+            $("#txtCreate").val((eval(rows[0].CreateTime.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d"));
+            $('#editDiv').dialog({
+                title: "编辑信息",
+                modal: true,
+                collapsible: true,
+                width: 300,
+                height: 400,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //自己完成表单校验
+                        $("#editForm").submit();
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#editDiv').dialog('close');
+                    }
+                }]
+            });
+        }
+        //编辑后执行
+        function afterEdit() {
+            $('#editDiv').dialog('close');
+            $('#tt').datagrid('reload');//重新加载。
+        }
+        //删除
+        function deleteInfo() {
+            var rows = $('#tt').datagrid('getSelections');
+            if (!rows || rows.length == 0) {
+                $.messager.alert("提醒", "请选择要删除的记录!", "error");
+                return;
+            }
+            if ($.messager.confirm("提示", "确定要删除吗？", function (r) {
+                if (r) {
+                    var strId = "";
+                for (var i = 0; i < rows.length; i++) {
+                       strId = strId + rows[i].MajorId + ",";//1,3,4,
+            }
+                strId = strId.substr(0, strId.length - 1);//去掉最后的逗号.
+                $.post("/TbMajor/DeleteTbMajorInfo", { "strId": strId }, function (data) {
+                    if (data == "ok") {
+                     $('#tt').datagrid('reload');//重新加载。
+                               $('#tt').datagrid('clearSelections');
+            } else {
+
+            }
+            });
+            }
+            }));
+        }
+        //增加
+        function addInfo() {
+            $("#addDiv").css("display", "block");
+            $('#addDiv').dialog({
+                title: "添加信息",
+                modal: true,
+                collapsible: true,
+                width: 300,
+                height: 400,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        $("#addForm").submit();//提交表单.
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#addDiv').dialog('close');
+                    }
+                }]
+            });
+        }
+        //增加后执行
+        function afterAdd() {
+            $('#addDiv').dialog('close');
+            $('#tt').datagrid('reload');//重新加载。
+            $("#addForm input").val("");
+        }
+
+    </script>
+}
+<div style="margin:0 auto;width:1000px;">
+    <table id="tt" style="width: 1000px;" iconcls="icon-edit"></table>
+</div>
+<div id="editDiv" style="display:none">
+    @using (Ajax.BeginForm("EditMajorInfo", new { }, new AjaxOptions() { Confirm = "你确定修改吗?", HttpMethod = "post", OnSuccess = "afterEdit" }, new { id = "editForm" }))
+    {
+        <input type="hidden" name="MajorId" id="txtId" />
+        <input type="hidden" name="MajorNumber" id="txtNum" />
+        <input type="hidden" name="CreateTime" id="txtCreate" />
+        <div style="margin-bottom:20px">
+            <div>专业名称:</div>
+            <input class="easyui-textbox" name="MajorName" id="txtName" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>专业人数:</div>
+            <input class="easyui-textbox" name="MajorCount" id="txtCount" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>专业备注</div>
+            <textarea class="easyui-textbox" name="MajorMark" id="txtMark" rows="3"></textarea>
+        </div>
+        <div style="margin-bottom:20px">
+            <div>是否开通:</div>
+            <select class="easyui-combobox" name="DelFlag" style="width:95%;height:30px">
+                <option value="0">开通</option>
+                <option value="1">关闭</option>
+            </select>
+        </div>
+    }
+</div>
+
+<div id="addDiv" style="display:none">
+    @using (Ajax.BeginForm("AddMajorInfo", new { }, new AjaxOptions() { Confirm = "你确定添加吗?", HttpMethod = "post", OnSuccess = "afterAdd" }, new { id = "addForm" }))
+    {
+        <div style="margin-bottom:20px">
+            <div>专业编号:</div>
+            <input class="easyui-textbox" name="MajorNumber" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>专业名称:</div>
+            <input class="easyui-textbox" name="MajorName" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>专业人数:</div>
+            <input class="easyui-textbox" name="MajorCount" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>专业备注:</div>
+            <textarea class="easyui-textbox" name="MajorMark" rows="3"></textarea>
+        </div>
+        <div style="margin-bottom:20px">
+            <div>是否开通:</div>
+            <select class="easyui-combobox" name="DelFlag" style="width:95%;height:30px">
+                <option value="0">开通</option>
+                <option value="1">关闭</option>
+            </select>
+        </div>
+    }
+</div>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf2a99a345d340d694e4d3e5510aa4f6" Name="Diagram1">
+        <EntityTypeShape EntityType="ShuntModel.TbAnswer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbApplyMajor" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbClass" Width="1.5" PointX="3.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbDesire" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbDissertation" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbInterviewScore" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbLession" Width="1.5" PointX="3.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbLessionScore" Width="1.5" PointX="6" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbMajor" Width="1.5" PointX="1.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbQuesScore" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbQuestion" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbRecord" Width="1.5" PointX="6" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbShunt" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbStudent" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbStudentClass" Width="1.5" PointX="3" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbTaskRecord" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbTaskRecordDetail" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbTopic" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbTotalScore" Width="1.5" PointX="3" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShuntModel.TbUsers" Width="1.5" PointX="0.75" PointY="18.625" IsExpanded="true" />
+        <AssociationConnector Association="ShuntModel.FK_TbClass_TbMajor" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbRecord_TbClass" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbRecord_TbClass1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbDesire_TbMajor" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbDesire_TbMajor1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbDesire_TbMajor2" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbDesire_TbStudent" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbInterviewScore_TbStudent" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbLessionScore_TbLession" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbLessionScore_TbStudent" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbQuestion_TbMajor" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbRecord_TbMajor" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbRecord_TbMajor1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbQuestion_TbStudent" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbQuestion_TbUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbRecord_TbStudent" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbStudentClass_TbStudent" ManuallyRouted="false" />
+        <AssociationConnector Association="ShuntModel.FK_TbTotalScore_TbStudent" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

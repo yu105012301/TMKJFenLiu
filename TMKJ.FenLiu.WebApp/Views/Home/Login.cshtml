@@ -1,0 +1,88 @@
+﻿@model TMKJ.FenLiu.Model.TbUsers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link type="text/css" rel="stylesheet" href="~/Content/layout.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/common.css" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="js/png.js"></script>
+    <script type="text/javascript">
+    DD_belatedPNG.fix('.logo img,.tool_box,.system_pic,.close_but img');
+    </script>
+    <![endif]-->
+    <style type="text/css">
+        body {
+            background: #FFF;
+        }
+    </style>
+    <script>
+        $(window).load(function () {
+            change();
+        })
+        function change() {
+            $("#dd").change(function () {
+                if ($(this).val() == 0) {
+                    document.getElementById("form0").action = "000";
+                } else {
+                    document.getElementById("form0").action = "111";
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div class="login_page" style="background:#FFF;">
+        <div class="logo_t"><img src="~/images/home/logo.png" /></div>
+        <div class="login_con">
+            <div class="login_con_l"><em><img src="~/images/home/login_pic.png" /></em></div>
+            <div class="login_con_r">
+                <div class="login_r_t">用户登录</div>
+                @using (Ajax.BeginForm("Login",  new AjaxOptions() { HttpMethod = "post" }))
+                {
+                    <div class="login_line"><label class="login_line_l">用户名：</label><input type="text" class="login_line_input" name="UserCode" value="" /></div>
+                    <div class="clearboth"></div>
+                    <div class="login_line"><label class="login_line_l">密&nbsp;&nbsp;&nbsp;码：</label><input type="password" class="login_line_input" name="UserPwd" value="" /></div>
+                    <div class="clearboth"></div>
+                    <div class="login_line">
+                        <select id="dd">
+                            <option value="0">管理员</option>
+                            <option value="1">学生</option>
+                        </select>
+                    </div>
+                    <div class="clearboth"></div>
+                    <div class="login_line"><label class="login_line_l">&nbsp;</label><input type="submit" class="plat_login_btn" value="登&nbsp;&nbsp;录" /></div>
+                    <div class="clearboth"></div>
+                }
+            </div>
+            <div class="clearboth"></div>
+        </div>
+        <div class="clearboth"></div>
+        <div class="fot_con">
+            <p class="comp_line"><a href="javascript:;">北京信息科技大学</a>版权所有</p>
+            <p class="comp_p_line">
+                <span class="comp_span"><a href="javascript:;">北京同美世纪科技有限公司</a>技术支持</span>
+                <span class="use_fot_a" style="display:none">
+                    <a href="javascript:;">帮助中心</a>
+                    <em>|</em>
+                    <a href="javascript:;">诚招代理</a>
+                    <em>|</em>
+                    <a href="javascript:;">联系我们</a>
+                </span>
+            </p>
+        </div>
+        <div class="clearboth"></div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script></script>
+</body>
+</html>

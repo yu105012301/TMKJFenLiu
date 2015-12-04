@@ -1,0 +1,17 @@
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Model\bin\Debug\TMKJ.FenLiu.Model.dll.config
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Model\bin\Debug\TMKJ.FenLiu.Model.dll
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Model\bin\Debug\TMKJ.FenLiu.Model.pdb
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Model\bin\Debug\EntityFramework.dll
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Model\bin\Debug\EntityFramework.xml
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Model\obj\Debug\TMKJ.FenLiu.Model.dll
+K:\远E文档\王成伟OA\OA2\第二天内容\资料源码\CZBK.HeiMaOA\CZBK.HeiMaOA.Model\obj\Debug\TMKJ.FenLiu.Model.pdb
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Model\bin\Debug\TMKJ.FenLiu.Model.dll.config
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Model\bin\Debug\TMKJ.FenLiu.Model.dll
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Model\bin\Debug\TMKJ.FenLiu.Model.pdb
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Model\bin\Debug\EntityFramework.dll
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Model\bin\Debug\EntityFramework.xml
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Model\obj\Debug\TMKJ.FenLiu.Model.dll
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Model\obj\Debug\TMKJ.FenLiu.Model.pdb
+E:\YjcTest\TMKJ.FenLiu\TMKJ.FenLiu.Model\obj\Debug\TMKJ.FenLiu.Model.csprojResolveAssemblyReference.cache

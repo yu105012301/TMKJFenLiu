@@ -1,0 +1,271 @@
+﻿@model TMKJ.FenLiu.Model.TbUsers
+
+@{
+    ViewBag.Title = "TeacherManage";
+    Layout = "~/Views/Shared/_Adminout.cshtml";
+}
+@section name{
+    @Model.UserName
+}
+@section style{
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/datapattern.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            loadData();
+        });
+
+
+        function afterAdd() {
+            $('#addDiv').dialog('close');
+            $('#tt').datagrid('reload');//重新加载。
+            $("#addForm input").val("");
+        }
+
+        function loadData() {
+            $('#tt').datagrid({
+                url: '/Index/GetTeacherInfo',
+                title: '教师列表',
+                width: 1000,
+                height: 400,
+                fitColumns: true, //列自适应
+                nowrap: false,
+                idField: 'UsersId',//主键列的列明
+                loadMsg: '正在加载用户的信息...',
+                pagination: true,//是否有分页
+                singleSelect: false,//是否单行选择
+                pageSize: 5,//页大小，一页多少条数据
+                pageNumber: 1,//当前页，默认的
+                pageList: [2, 5, 10],
+                queryParams: {},//往后台传递参数
+                columns: [[
+                    { field: 'ck', checkbox: true, align: 'left', width: 50 },
+					{ field: 'UserName', title: '姓名', width: 70 },
+                     { field: 'UserPwd', title: '密码', width: 70 },
+                     {
+                         field: 'SysRole', title: '角色', width: 50,
+                         formatter: function (value, row, index) {
+                             switch (value) {
+                                 case 1: return '管理员';
+                                     break;
+                                 case 2: return '教师';
+                                     break;
+                             }
+                         }
+                     },
+					{
+					    field: 'CreateTime', title: '创建时间', width: 80, align: 'right',
+					    formatter: function (value, row, index) {
+					        return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
+					    }
+					},
+                    {
+                        field: 'ModifyTime', title: '修改时间', width: 80, align: 'right',
+                        formatter: function (value, row, index) {
+                            return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
+                        }
+                    }
+                ]],
+                toolbar: [{
+                    id: 'btnDelete',
+                    text: '删除',
+                    iconCls: 'icon-remove',
+                    handler: function () {
+                        deleteInfo();
+                    }
+                }, {
+                    id: 'btnAdd',
+                    text: '添加',
+                    iconCls: 'icon-add',
+                    handler: function () {
+                        addInfo();
+                    }
+                }, {
+                    id: 'btnEdit',
+                    text: '编辑',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        editInfo();
+                    }
+                }],
+            });
+        }
+
+        //修改信息
+        function editInfo() {
+            var rows = $('#tt').datagrid('getSelections');
+            if (rows.length != 1) {
+                $.messager.alert("提示", "错误", "error");
+                return;
+            }
+            $("#editDiv").css("display", "block");
+            //给表单添加修改的数据.
+            $("#txtName").val(rows[0].UserName);
+            $("#txtPwd").val(rows[0].UserPwd);
+            $("#txtId").val(rows[0].UsersId);
+            $("#txtCode").val(rows[0].UserCode);
+            //$("#txtBir").val(rows[0].Birthday);
+            $("#txtCreate").val((eval(rows[0].CreateTime.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d"));
+            $('#editDiv').dialog({
+                title: "编辑信息",
+                modal: true,
+                collapsible: true,
+                width: 300,
+                height: 400,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //自己完成表单校验
+                        $("#editForm").submit();
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#editDiv').dialog('close');
+
+                    }
+                }]
+            });
+        }
+        //修改完成后调用该方法
+        function afterEdit() {
+            $('#editDiv').dialog('close');
+            $('#tt').datagrid('reload');//重新加载。
+        }
+
+        function deleteInfo() {
+            var rows = $('#tt').datagrid('getSelections');
+            if (!rows || rows.length == 0) {
+                $.messager.alert("提醒", "请选择要删除的记录!", "error");
+                return;
+            }
+            if ($.messager.confirm("提示", "确定要删除吗?", function (r) {
+               if (r) {//如果成立表示用户单击了确定
+                //获取要删除的记录的编号.
+                var strId = "";
+               for (var i = 0; i < rows.length; i++) {
+                       strId = strId + rows[i].UsersId + ",";//1,3,4,
+            }
+               strId = strId.substr(0, strId.length - 1);//去掉最后的逗号.
+               $.post("/Index/DeleteUserInfo", { "strId": strId }, function (data) {
+                           if (data == "ok") {
+                // loadData();
+                           $('#tt').datagrid('reload');//重新加载。
+                               $('#tt').datagrid('clearSelections');
+            } else {
+
+            }
+            });
+            }
+            }));
+        }
+
+        function addInfo() {
+            $("#addDiv").css("display", "block");
+            $('#addDiv').dialog({
+                title: "添加信息",
+                modal: true,
+                collapsible: true,
+                width: 300,
+                height: 400,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //自己完成表单校验
+                        $("#addForm").submit();//提交表单.
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#addDiv').dialog('close');
+
+                    }
+                }]
+            });
+        }
+    </script>
+}
+<div style="margin:0 auto;width:1000px;">
+    <table id="tt" style="width: 1000px;" iconcls="icon-edit"></table>
+</div>
+<div id="addDiv" style="display:none">
+    @using (Ajax.BeginForm("AddUserInfo", new { }, new AjaxOptions() { Confirm = "你确定添加吗?", HttpMethod = "post", OnSuccess = "afterAdd" }, new { id = "addForm" }))
+    {
+         <div style="margin-bottom:20px">
+            <div>用户名:</div>
+             <input class="easyui-textbox" name="UserCode" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>姓名:</div>
+            <input class="easyui-textbox" name="UserName" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>密码:</div>
+            <input type="password" class="easyui-textbox" name="UserPwd" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>角色:</div>
+            <select class="easyui-combobox" name="SysRole" style="width:95%;height:30px">
+                <option value="1">管理员</option>
+                <option value="2">教师</option>
+            </select>
+        </div>
+        <div style="margin-bottom:20px">
+            <div>所属专业:</div>
+            <select class="easyui-combobox" name="MajorId" style="width:95%;height:30px">
+                <option value="1">信息工程</option>
+                <option value="2">软件开发</option>
+            </select>
+        </div>
+        <div style="margin-bottom:20px">
+            <div>是否开通:</div>
+            <select class="easyui-combobox" name="DelFlag" style="width:95%;height:30px">
+                <option value="1">开通</option>
+                <option value="2">关闭</option>
+            </select>
+        </div>
+    }
+</div>
+
+<div id="editDiv" style="display:none">
+    @using (Ajax.BeginForm("EditUserInfo", new { }, new AjaxOptions() { Confirm = "你确定修改吗?", HttpMethod = "post", OnSuccess = "afterEdit" }, new { id = "editForm" }))
+    {
+        <input type="hidden" name="UsersId" id="txtId" />
+        <input type="hidden" name="UserCode" id="txtCode" />
+        @*<input type="hidden" name="Birthday" id="txtBir" />*@
+        <input type="hidden" name="CreateTime" id="txtCreate" />
+        <div style="margin-bottom:20px">
+            <div>姓名:</div>
+            <input class="easyui-textbox" name="UserName" id="txtName" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>密码:</div>
+            <input type="password" class="easyui-textbox" name="UserPwd" id="txtPwd" style="width:95%;height:30px">
+        </div>
+        <div style="margin-bottom:20px">
+            <div>角色:</div>
+            <select class="easyui-combobox" name="SysRole" style="width:95%;height:30px">
+                <option value="1">管理员</option>
+                <option value="2">教师</option>
+            </select>
+        </div>
+        <div style="margin-bottom:20px">
+            <div>所属专业:</div>
+            <select class="easyui-combobox" name="MajorId" style="width:95%;height:30px">
+                <option value="1">信息工程</option>
+                <option value="2">软件开发</option>
+            </select>
+        </div>
+        <div style="margin-bottom:20px">
+            <div>是否开通:</div>
+            <select class="easyui-combobox" name="DelFlag" style="width:95%;height:30px">
+                <option value="1">开通</option>
+                <option value="2">关闭</option>
+            </select>
+        </div>
+    }
+</div>

@@ -1,0 +1,114 @@
+﻿@model TMKJ.FenLiu.Model.TbUsers
+
+@{
+    ViewBag.Title = "AdminManage";
+    Layout = "~/Views/Shared/_Adminout.cshtml";
+}
+@section name{
+    @Model.UserName
+}
+<div class="container">
+    <div class="index_con">
+        <div class="my_info clearfix">
+            <div class="my_info_top clearfix">
+                <em class="my_info_l"><i class="lit_info pic_use"></i>个人信息</em>
+                <em class="edit_my_info"><input id="btn_Edit" type="button" value="编辑个人资料" class="edit_my_info_btn pic_use" /></em>
+            </div>
+            <div class="clearboth"></div>
+            <div class="my_info_con">
+                <div class="my_info_photo">
+
+                </div>
+                <div class="my_info_det">
+                    <p class="my_info_name">我的姓名：<em>@Model.UserName</em></p>
+                    <p class="my_info_line">登陆账号：@Model.UserCode</p>
+                </div>
+            </div>
+            <!--my_info_con--END-->
+        </div>
+        <!--my_info--END-->
+        <div class="model_box">
+            <div class="model_box_top">
+                <em class="model_box_t_l"><i class="func_pic pic_use"></i>功能列表</em>
+            </div>
+            <div class="model_box_con">
+                <div class="one_mod_l">
+                    <div class="one_mod_top"><img src="~/images/home/func_01.png" /></div>
+                    <div class="one_lit_box">
+                        <h3><a href="javascript:void(0)" onclick="Teacher()">教师管理</a></h3>
+                        <p class="simp_intro">对教师进行管理（个人信息编辑/删除）</p>
+                    </div>
+                    <div class="func_pic_01 pic_use"></div>
+                </div>
+                <!--one_mod_l--END-->
+                <div class="one_mod_m">
+                    <div class="one_mod_m_t clearfix">
+                        <div class="one_mod_top"><img src="~/images/home/func_02.png" /></div>
+                        <div class="one_lit_box">
+                            <h3><a href="javascript:;">院系设置</a></h3>
+                            <p class="simp_intro">院系信息维护</p>
+                        </div>
+                        <div class="one_lit_box">
+                            <h3><a href="javascript:void(0)" onclick="Major()">专业管理</a></h3>
+                            <p class="simp_intro">专业信息维护</p>
+                        </div>
+                        <div class="one_lit_box">
+                            <h3><a href="javascript:;">班级设置</a></h3>
+                            <p class="simp_intro">班级信息维护</p>
+                        </div>
+                        <div class="one_lit_box">
+                            <h3><a href="javascript:;">分流设置</a></h3>
+                            <p class="simp_intro">分流公式设置</p>
+                        </div>
+                        <div class="func_pic_02 pic_use"></div>
+                    </div>
+                    <div class="one_mod_m_b clearfix">
+                        <div class="one_mod_top"><img src="~/images/home/func_03.png" /></div>
+                        <div class="one_lit_box">
+                            <h3><a href="javascript:;">专业课统计</a></h3>
+                            <p class="simp_intro">对专业课成绩统计</p>
+                        </div>
+                        <div class="one_lit_box">
+                            <h3><a href="javascript:;">论文统计</a></h3>
+                            <p class="simp_intro">对论文成绩统计</p>
+                        </div>
+                        <div class="one_lit_box">
+                            <h3><a href="javascript:;">面试统计</a></h3>
+                            <p class="simp_intro">对面试成绩统计</p>
+                        </div>
+                        <div class="one_lit_box">
+                            <h3><a href="javascript:;">志愿统计</a></h3>
+                            <p class="simp_intro">对学生志愿统计</p>
+                        </div>
+                        <div class="func_pic_03 pic_use"></div>
+                    </div>
+                </div>
+                <div class="one_mod_r">
+                    <div class="one_mod_top"><img src="~/images/home/func_04.png" /></div>
+                    <div class="one_lit_box">
+                        <h3><a href="javascript:;">用户管理</a></h3>
+                        <p class="simp_intro">对学生信息进行管理</p>
+                    </div>
+                    <div class="one_lit_box">
+                        <h3><a href="javascript:;">学年设置</a></h3>
+                        <p class="simp_intro">设置当前学年</p>
+                    </div>
+                    <div class="one_lit_box">
+                        <h3><a href="javascript:;">时间设置</a></h3>
+                        <p class="simp_intro">对本系统的开启时间进行设置</p>
+                    </div>
+                    <div class="func_pic_04 pic_use"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Teacher() {
+        window.location.href = "/Index/TeacherManage";
+    }
+    function Major() {
+        window.location.href = "/TbMajor/Index";
+    }
+</script>
+

@@ -1,0 +1,14 @@
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\bin\Debug\CZBK.HeiMaOA.SpringNetDemo.exe.config
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\bin\Debug\CZBK.HeiMaOA.SpringNetDemo.exe
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\bin\Debug\CZBK.HeiMaOA.SpringNetDemo.pdb
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\bin\Debug\Spring.Core.dll
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\bin\Debug\Spring.Core.pdb
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\bin\Debug\Spring.Core.xml
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\obj\Debug\CZBK.HeiMaOA.SpringNetDemo.Form1.resources
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\obj\Debug\CZBK.HeiMaOA.SpringNetDemo.Properties.Resources.resources
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\obj\Debug\CZBK.HeiMaOA.SpringNetDemo.csproj.GenerateResource.Cache
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\obj\Debug\CZBK.HeiMaOA.SpringNetDemo.exe
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\obj\Debug\CZBK.HeiMaOA.SpringNetDemo.pdb
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\bin\Debug\Common.Logging.dll
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\bin\Debug\service.xml
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.SpringNetDemo\obj\Debug\CZBK.HeiMaOA.SpringNetDemo.csprojResolveAssemblyReference.cache

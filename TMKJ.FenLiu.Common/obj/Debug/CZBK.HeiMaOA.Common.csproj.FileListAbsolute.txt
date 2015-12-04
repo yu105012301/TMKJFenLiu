@@ -1,0 +1,10 @@
+D:\传智讲课\黑马十四期\第一天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\bin\Debug\CZBK.HeiMaOA.Common.dll
+D:\传智讲课\黑马十四期\第一天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\bin\Debug\CZBK.HeiMaOA.Common.pdb
+D:\传智讲课\黑马十四期\第一天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\obj\Debug\CZBK.HeiMaOA.Common.csprojResolveAssemblyReference.cache
+D:\传智讲课\黑马十四期\第一天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\obj\Debug\CZBK.HeiMaOA.Common.dll
+D:\传智讲课\黑马十四期\第一天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\obj\Debug\CZBK.HeiMaOA.Common.pdb
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\bin\Debug\CZBK.HeiMaOA.Common.dll
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\bin\Debug\CZBK.HeiMaOA.Common.pdb
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\obj\Debug\CZBK.HeiMaOA.Common.csprojResolveAssemblyReference.cache
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\obj\Debug\CZBK.HeiMaOA.Common.dll
+D:\传智讲课\黑马十四期\第二天\CZBK.HeiMaOA\CZBK.HeiMaOA.Common\obj\Debug\CZBK.HeiMaOA.Common.pdb

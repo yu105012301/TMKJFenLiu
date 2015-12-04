@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShuntModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TbAnswer">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+    </Key>
+    <Property Name="AnswerId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AnswerContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TopicId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="AnswerIndex" Type="Int32" />
+    <Property Name="IsRightAnswer" Type="Boolean" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TbApplyMajor">
+    <Key>
+      <PropertyRef Name="ApplyMajorId" />
+    </Key>
+    <Property Name="ApplyMajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="MajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ToApplyMajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ApplyReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDone" Type="Int32" />
+    <Property Name="DealUserId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="DealTime" Type="DateTime" Precision="3" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TbClass">
+    <Key>
+      <PropertyRef Name="ClassId" />
+    </Key>
+    <Property Name="ClassId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClassName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClassCount" Type="Int32" Nullable="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbMajor" Relationship="Self.FK_TbClass_TbMajor" FromRole="TbClass" ToRole="TbMajor" />
+    <NavigationProperty Name="TbRecord" Relationship="Self.FK_TbRecord_TbClass" FromRole="TbClass" ToRole="TbRecord" />
+    <NavigationProperty Name="TbRecord1" Relationship="Self.FK_TbRecord_TbClass1" FromRole="TbClass" ToRole="TbRecord" />
+  </EntityType>
+  <EntityType Name="TbDesire">
+    <Key>
+      <PropertyRef Name="DesireId" />
+    </Key>
+    <Property Name="DesireId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirMajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SecMajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ThiMajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbMajor" Relationship="Self.FK_TbDesire_TbMajor" FromRole="TbDesire" ToRole="TbMajor" />
+    <NavigationProperty Name="TbMajor1" Relationship="Self.FK_TbDesire_TbMajor1" FromRole="TbDesire" ToRole="TbMajor" />
+    <NavigationProperty Name="TbMajor2" Relationship="Self.FK_TbDesire_TbMajor2" FromRole="TbDesire" ToRole="TbMajor" />
+    <NavigationProperty Name="TbStudent" Relationship="Self.FK_TbDesire_TbStudent" FromRole="TbDesire" ToRole="TbStudent" />
+  </EntityType>
+  <EntityType Name="TbDissertation">
+    <Key>
+      <PropertyRef Name="DissertationId" />
+    </Key>
+    <Property Name="DissertationId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="MajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Score" Type="Double" />
+    <Property Name="UserId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="SubTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TbInterviewScore">
+    <Key>
+      <PropertyRef Name="InterviewScoreId" />
+    </Key>
+    <Property Name="InterviewScoreId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InterviewScore" Type="Double" Nullable="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbStudent" Relationship="Self.FK_TbInterviewScore_TbStudent" FromRole="TbInterviewScore" ToRole="TbStudent" />
+  </EntityType>
+  <EntityType Name="TbLession">
+    <Key>
+      <PropertyRef Name="LessionId" />
+    </Key>
+    <Property Name="LessionId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LessionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LessionType" Type="Int32" Nullable="false" />
+    <Property Name="MajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LessionTime" Type="Int32" Nullable="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbLessionScore" Relationship="Self.FK_TbLessionScore_TbLession" FromRole="TbLession" ToRole="TbLessionScore" />
+  </EntityType>
+  <EntityType Name="TbLessionScore">
+    <Key>
+      <PropertyRef Name="LessionScoreId" />
+    </Key>
+    <Property Name="LessionScoreId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LessionId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LessionScore" Type="Double" Nullable="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbLession" Relationship="Self.FK_TbLessionScore_TbLession" FromRole="TbLessionScore" ToRole="TbLession" />
+    <NavigationProperty Name="TbStudent" Relationship="Self.FK_TbLessionScore_TbStudent" FromRole="TbLessionScore" ToRole="TbStudent" />
+  </EntityType>
+  <EntityType Name="TbMajor">
+    <Key>
+      <PropertyRef Name="MajorId" />
+    </Key>
+    <Property Name="MajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MajorNumber" Type="Int32" Nullable="false" />
+    <Property Name="MajorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MajorMark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MajorCount" Type="Int32" Nullable="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbClass" Relationship="Self.FK_TbClass_TbMajor" FromRole="TbMajor" ToRole="TbClass" />
+    <NavigationProperty Name="TbDesire" Relationship="Self.FK_TbDesire_TbMajor" FromRole="TbMajor" ToRole="TbDesire" />
+    <NavigationProperty Name="TbDesire1" Relationship="Self.FK_TbDesire_TbMajor1" FromRole="TbMajor" ToRole="TbDesire" />
+    <NavigationProperty Name="TbDesire2" Relationship="Self.FK_TbDesire_TbMajor2" FromRole="TbMajor" ToRole="TbDesire" />
+    <NavigationProperty Name="TbQuestion" Relationship="Self.FK_TbQuestion_TbMajor" FromRole="TbMajor" ToRole="TbQuestion" />
+    <NavigationProperty Name="TbRecord" Relationship="Self.FK_TbRecord_TbMajor" FromRole="TbMajor" ToRole="TbRecord" />
+    <NavigationProperty Name="TbRecord1" Relationship="Self.FK_TbRecord_TbMajor1" FromRole="TbMajor" ToRole="TbRecord" />
+  </EntityType>
+  <EntityType Name="TbQuesScore">
+    <Key>
+      <PropertyRef Name="QuesScoreId" />
+    </Key>
+    <Property Name="QuesScoreId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="QuesType" Type="Int32" />
+    <Property Name="QuesScore" Type="Double" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TbQuestion">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsersId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QuestionTime" Type="DateTime" Precision="3" />
+    <Property Name="AnswerTime" Type="DateTime" Precision="3" />
+    <Property Name="IsShow" Type="Int32" />
+    <Property Name="Delflag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbMajor" Relationship="Self.FK_TbQuestion_TbMajor" FromRole="TbQuestion" ToRole="TbMajor" />
+    <NavigationProperty Name="TbStudent" Relationship="Self.FK_TbQuestion_TbStudent" FromRole="TbQuestion" ToRole="TbStudent" />
+    <NavigationProperty Name="TbUsers" Relationship="Self.FK_TbQuestion_TbUsers" FromRole="TbQuestion" ToRole="TbUsers" />
+  </EntityType>
+  <EntityType Name="TbRecord">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BeforeMajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BeforeClassId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AfterMajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AfterClassId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Stage" Type="Int32" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbClass" Relationship="Self.FK_TbRecord_TbClass" FromRole="TbRecord" ToRole="TbClass" />
+    <NavigationProperty Name="TbClass1" Relationship="Self.FK_TbRecord_TbClass1" FromRole="TbRecord" ToRole="TbClass" />
+    <NavigationProperty Name="TbMajor" Relationship="Self.FK_TbRecord_TbMajor" FromRole="TbRecord" ToRole="TbMajor" />
+    <NavigationProperty Name="TbMajor1" Relationship="Self.FK_TbRecord_TbMajor1" FromRole="TbRecord" ToRole="TbMajor" />
+    <NavigationProperty Name="TbStudent" Relationship="Self.FK_TbRecord_TbStudent" FromRole="TbRecord" ToRole="TbStudent" />
+  </EntityType>
+  <EntityType Name="TbShunt">
+    <Key>
+      <PropertyRef Name="OpenCloseId" />
+    </Key>
+    <Property Name="OpenCloseId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OpenTime" Type="DateTime" Precision="3" />
+    <Property Name="CloseTime" Type="DateTime" Precision="3" />
+    <Property Name="Stage" Type="Int32" />
+    <Property Name="ShuntName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OpenShunt" Type="DateTime" Precision="3" />
+    <Property Name="CloseShunt" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TbStudent">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="SysRole" Type="Int32" Nullable="false" />
+    <Property Name="MajorId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Grade" Type="Int32" Nullable="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbDesire" Relationship="Self.FK_TbDesire_TbStudent" FromRole="TbStudent" ToRole="TbDesire" />
+    <NavigationProperty Name="TbInterviewScore" Relationship="Self.FK_TbInterviewScore_TbStudent" FromRole="TbStudent" ToRole="TbInterviewScore" />
+    <NavigationProperty Name="TbLessionScore" Relationship="Self.FK_TbLessionScore_TbStudent" FromRole="TbStudent" ToRole="TbLessionScore" />
+    <NavigationProperty Name="TbQuestion" Relationship="Self.FK_TbQuestion_TbStudent" FromRole="TbStudent" ToRole="TbQuestion" />
+    <NavigationProperty Name="TbRecord" Relationship="Self.FK_TbRecord_TbStudent" FromRole="TbStudent" ToRole="TbRecord" />
+    <NavigationProperty Name="TbStudentClass" Relationship="Self.FK_TbStudentClass_TbStudent" FromRole="TbStudent" ToRole="TbStudentClass" />
+    <NavigationProperty Name="TbTotalScore" Relationship="Self.FK_TbTotalScore_TbStudent" FromRole="TbStudent" ToRole="TbTotalScore" />
+  </EntityType>
+  <EntityType Name="TbStudentClass">
+    <Key>
+      <PropertyRef Name="StudentClassId" />
+    </Key>
+    <Property Name="StudentClassId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClassId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbStudent" Relationship="Self.FK_TbStudentClass_TbStudent" FromRole="TbStudentClass" ToRole="TbStudent" />
+  </EntityType>
+  <EntityType Name="TbTaskRecord">
+    <Key>
+      <PropertyRef Name="TaskRecordId" />
+    </Key>
+    <Property Name="TaskRecordId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="TopicId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="TaskIndex" Type="Int32" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TbTaskRecordDetail">
+    <Key>
+      <PropertyRef Name="TaskRecordDetailId" />
+    </Key>
+    <Property Name="TaskRecordDetailId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TaskRecordId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="AnswerId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="TaskRecordIndex" Type="Int32" />
+    <Property Name="AnswerContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TbTopic">
+    <Key>
+      <PropertyRef Name="TopicId" />
+    </Key>
+    <Property Name="TopicId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TopicContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TopicType" Type="Int32" />
+    <Property Name="MajorId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="TopicIndex" Type="Int32" />
+    <Property Name="Score" Type="Double" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TbTotalScore">
+    <Key>
+      <PropertyRef Name="TotalScoreId" />
+    </Key>
+    <Property Name="TotalScoreId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InterviewScore" Type="Double" />
+    <Property Name="MajorScore" Type="Double" />
+    <Property Name="QuestionnaireScore" Type="Double" />
+    <Property Name="DissertationScore" Type="Double" />
+    <Property Name="TotalScore" Type="Double" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbStudent" Relationship="Self.FK_TbTotalScore_TbStudent" FromRole="TbTotalScore" ToRole="TbStudent" />
+  </EntityType>
+  <EntityType Name="TbUsers">
+    <Key>
+      <PropertyRef Name="UsersId" />
+    </Key>
+    <Property Name="UsersId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="SysRole" Type="Int32" Nullable="false" />
+    <Property Name="MajorId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DelFlag" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TbQuestion" Relationship="Self.FK_TbQuestion_TbUsers" FromRole="TbUsers" ToRole="TbQuestion" />
+  </EntityType>
+  <Association Name="FK_TbClass_TbMajor">
+    <End Role="TbMajor" Type="Self.TbMajor" Multiplicity="1" />
+    <End Role="TbClass" Type="Self.TbClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbMajor">
+        <PropertyRef Name="MajorId" />
+      </Principal>
+      <Dependent Role="TbClass">
+        <PropertyRef Name="MajorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbRecord_TbClass">
+    <End Role="TbClass" Type="Self.TbClass" Multiplicity="1" />
+    <End Role="TbRecord" Type="Self.TbRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbClass">
+        <PropertyRef Name="ClassId" />
+      </Principal>
+      <Dependent Role="TbRecord">
+        <PropertyRef Name="AfterClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbRecord_TbClass1">
+    <End Role="TbClass" Type="Self.TbClass" Multiplicity="1" />
+    <End Role="TbRecord" Type="Self.TbRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbClass">
+        <PropertyRef Name="ClassId" />
+      </Principal>
+      <Dependent Role="TbRecord">
+        <PropertyRef Name="BeforeClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbDesire_TbMajor">
+    <End Role="TbMajor" Type="Self.TbMajor" Multiplicity="1" />
+    <End Role="TbDesire" Type="Self.TbDesire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbMajor">
+        <PropertyRef Name="MajorId" />
+      </Principal>
+      <Dependent Role="TbDesire">
+        <PropertyRef Name="FirMajorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbDesire_TbMajor1">
+    <End Role="TbMajor" Type="Self.TbMajor" Multiplicity="1" />
+    <End Role="TbDesire" Type="Self.TbDesire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbMajor">
+        <PropertyRef Name="MajorId" />
+      </Principal>
+      <Dependent Role="TbDesire">
+        <PropertyRef Name="SecMajorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbDesire_TbMajor2">
+    <End Role="TbMajor" Type="Self.TbMajor" Multiplicity="1" />
+    <End Role="TbDesire" Type="Self.TbDesire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbMajor">
+        <PropertyRef Name="MajorId" />
+      </Principal>
+      <Dependent Role="TbDesire">
+        <PropertyRef Name="ThiMajorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbDesire_TbStudent">
+    <End Role="TbStudent" Type="Self.TbStudent" Multiplicity="1" />
+    <End Role="TbDesire" Type="Self.TbDesire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbStudent">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="TbDesire">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbInterviewScore_TbStudent">
+    <End Role="TbStudent" Type="Self.TbStudent" Multiplicity="1" />
+    <End Role="TbInterviewScore" Type="Self.TbInterviewScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbStudent">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="TbInterviewScore">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbLessionScore_TbLession">
+    <End Role="TbLession" Type="Self.TbLession" Multiplicity="1" />
+    <End Role="TbLessionScore" Type="Self.TbLessionScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbLession">
+        <PropertyRef Name="LessionId" />
+      </Principal>
+      <Dependent Role="TbLessionScore">
+        <PropertyRef Name="LessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbLessionScore_TbStudent">
+    <End Role="TbStudent" Type="Self.TbStudent" Multiplicity="1" />
+    <End Role="TbLessionScore" Type="Self.TbLessionScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbStudent">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="TbLessionScore">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbQuestion_TbMajor">
+    <End Role="TbMajor" Type="Self.TbMajor" Multiplicity="1" />
+    <End Role="TbQuestion" Type="Self.TbQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbMajor">
+        <PropertyRef Name="MajorId" />
+      </Principal>
+      <Dependent Role="TbQuestion">
+        <PropertyRef Name="MajorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbRecord_TbMajor">
+    <End Role="TbMajor" Type="Self.TbMajor" Multiplicity="1" />
+    <End Role="TbRecord" Type="Self.TbRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbMajor">
+        <PropertyRef Name="MajorId" />
+      </Principal>
+      <Dependent Role="TbRecord">
+        <PropertyRef Name="BeforeMajorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbRecord_TbMajor1">
+    <End Role="TbMajor" Type="Self.TbMajor" Multiplicity="1" />
+    <End Role="TbRecord" Type="Self.TbRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbMajor">
+        <PropertyRef Name="MajorId" />
+      </Principal>
+      <Dependent Role="TbRecord">
+        <PropertyRef Name="AfterMajorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbQuestion_TbStudent">
+    <End Role="TbStudent" Type="Self.TbStudent" Multiplicity="1" />
+    <End Role="TbQuestion" Type="Self.TbQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbStudent">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="TbQuestion">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbQuestion_TbUsers">
+    <End Role="TbUsers" Type="Self.TbUsers" Multiplicity="1" />
+    <End Role="TbQuestion" Type="Self.TbQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbUsers">
+        <PropertyRef Name="UsersId" />
+      </Principal>
+      <Dependent Role="TbQuestion">
+        <PropertyRef Name="UsersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbRecord_TbStudent">
+    <End Role="TbStudent" Type="Self.TbStudent" Multiplicity="1" />
+    <End Role="TbRecord" Type="Self.TbRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbStudent">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="TbRecord">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbStudentClass_TbStudent">
+    <End Role="TbStudent" Type="Self.TbStudent" Multiplicity="1" />
+    <End Role="TbStudentClass" Type="Self.TbStudentClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbStudent">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="TbStudentClass">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TbTotalScore_TbStudent">
+    <End Role="TbStudent" Type="Self.TbStudent" Multiplicity="1" />
+    <End Role="TbTotalScore" Type="Self.TbTotalScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbStudent">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="TbTotalScore">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ShuntContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TbAnswer" EntityType="Self.TbAnswer" />
+    <EntitySet Name="TbApplyMajor" EntityType="Self.TbApplyMajor" />
+    <EntitySet Name="TbClass" EntityType="Self.TbClass" />
+    <EntitySet Name="TbDesire" EntityType="Self.TbDesire" />
+    <EntitySet Name="TbDissertation" EntityType="Self.TbDissertation" />
+    <EntitySet Name="TbInterviewScore" EntityType="Self.TbInterviewScore" />
+    <EntitySet Name="TbLession" EntityType="Self.TbLession" />
+    <EntitySet Name="TbLessionScore" EntityType="Self.TbLessionScore" />
+    <EntitySet Name="TbMajor" EntityType="Self.TbMajor" />
+    <EntitySet Name="TbQuesScore" EntityType="Self.TbQuesScore" />
+    <EntitySet Name="TbQuestion" EntityType="Self.TbQuestion" />
+    <EntitySet Name="TbRecord" EntityType="Self.TbRecord" />
+    <EntitySet Name="TbShunt" EntityType="Self.TbShunt" />
+    <EntitySet Name="TbStudent" EntityType="Self.TbStudent" />
+    <EntitySet Name="TbStudentClass" EntityType="Self.TbStudentClass" />
+    <EntitySet Name="TbTaskRecord" EntityType="Self.TbTaskRecord" />
+    <EntitySet Name="TbTaskRecordDetail" EntityType="Self.TbTaskRecordDetail" />
+    <EntitySet Name="TbTopic" EntityType="Self.TbTopic" />
+    <EntitySet Name="TbTotalScore" EntityType="Self.TbTotalScore" />
+    <EntitySet Name="TbUsers" EntityType="Self.TbUsers" />
+    <AssociationSet Name="FK_TbClass_TbMajor" Association="Self.FK_TbClass_TbMajor">
+      <End Role="TbMajor" EntitySet="TbMajor" />
+      <End Role="TbClass" EntitySet="TbClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbRecord_TbClass" Association="Self.FK_TbRecord_TbClass">
+      <End Role="TbClass" EntitySet="TbClass" />
+      <End Role="TbRecord" EntitySet="TbRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbRecord_TbClass1" Association="Self.FK_TbRecord_TbClass1">
+      <End Role="TbClass" EntitySet="TbClass" />
+      <End Role="TbRecord" EntitySet="TbRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbDesire_TbMajor" Association="Self.FK_TbDesire_TbMajor">
+      <End Role="TbMajor" EntitySet="TbMajor" />
+      <End Role="TbDesire" EntitySet="TbDesire" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbDesire_TbMajor1" Association="Self.FK_TbDesire_TbMajor1">
+      <End Role="TbMajor" EntitySet="TbMajor" />
+      <End Role="TbDesire" EntitySet="TbDesire" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbDesire_TbMajor2" Association="Self.FK_TbDesire_TbMajor2">
+      <End Role="TbMajor" EntitySet="TbMajor" />
+      <End Role="TbDesire" EntitySet="TbDesire" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbDesire_TbStudent" Association="Self.FK_TbDesire_TbStudent">
+      <End Role="TbStudent" EntitySet="TbStudent" />
+      <End Role="TbDesire" EntitySet="TbDesire" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbInterviewScore_TbStudent" Association="Self.FK_TbInterviewScore_TbStudent">
+      <End Role="TbStudent" EntitySet="TbStudent" />
+      <End Role="TbInterviewScore" EntitySet="TbInterviewScore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbLessionScore_TbLession" Association="Self.FK_TbLessionScore_TbLession">
+      <End Role="TbLession" EntitySet="TbLession" />
+      <End Role="TbLessionScore" EntitySet="TbLessionScore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbLessionScore_TbStudent" Association="Self.FK_TbLessionScore_TbStudent">
+      <End Role="TbStudent" EntitySet="TbStudent" />
+      <End Role="TbLessionScore" EntitySet="TbLessionScore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbQuestion_TbMajor" Association="Self.FK_TbQuestion_TbMajor">
+      <End Role="TbMajor" EntitySet="TbMajor" />
+      <End Role="TbQuestion" EntitySet="TbQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbRecord_TbMajor" Association="Self.FK_TbRecord_TbMajor">
+      <End Role="TbMajor" EntitySet="TbMajor" />
+      <End Role="TbRecord" EntitySet="TbRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbRecord_TbMajor1" Association="Self.FK_TbRecord_TbMajor1">
+      <End Role="TbMajor" EntitySet="TbMajor" />
+      <End Role="TbRecord" EntitySet="TbRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbQuestion_TbStudent" Association="Self.FK_TbQuestion_TbStudent">
+      <End Role="TbStudent" EntitySet="TbStudent" />
+      <End Role="TbQuestion" EntitySet="TbQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbQuestion_TbUsers" Association="Self.FK_TbQuestion_TbUsers">
+      <End Role="TbUsers" EntitySet="TbUsers" />
+      <End Role="TbQuestion" EntitySet="TbQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbRecord_TbStudent" Association="Self.FK_TbRecord_TbStudent">
+      <End Role="TbStudent" EntitySet="TbStudent" />
+      <End Role="TbRecord" EntitySet="TbRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbStudentClass_TbStudent" Association="Self.FK_TbStudentClass_TbStudent">
+      <End Role="TbStudent" EntitySet="TbStudent" />
+      <End Role="TbStudentClass" EntitySet="TbStudentClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TbTotalScore_TbStudent" Association="Self.FK_TbTotalScore_TbStudent">
+      <End Role="TbStudent" EntitySet="TbStudent" />
+      <End Role="TbTotalScore" EntitySet="TbTotalScore" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
